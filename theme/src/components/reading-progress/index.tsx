@@ -2,7 +2,7 @@ import React, {FunctionComponent, RefObject, useEffect, useState} from "react";
 import styled from "styled-components";
 import Theme from "../../styles/theme";
 
-interface ReadingProgressProps {
+export interface ReadingProgressProps {
   target: RefObject<HTMLElement>;
   color?: string;
 }

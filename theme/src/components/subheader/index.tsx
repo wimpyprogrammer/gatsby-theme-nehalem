@@ -2,7 +2,7 @@ import React, {FunctionComponent} from "react";
 import styled from "styled-components";
 import {Container} from "../common";
 
-interface SubheaderProps {
+export interface SubheaderProps {
   title: string;
   subtitle?: string;
   backgroundColor?: string;

@@ -2,7 +2,7 @@ import React, {FunctionComponent, useEffect} from "react";
 import tocbot from 'tocbot';
 import styled from "styled-components";
 
-interface TocProps {
+export interface TocProps {
   /**
    * Callback triggered whenever the TOC is clicked. Used for
    * hiding the mobile toc overlay when clicking on a link.

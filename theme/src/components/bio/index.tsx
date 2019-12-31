@@ -5,7 +5,7 @@ import {SiteMetadata} from "../../utils/models";
 import SocialChannelList from "../social-channel-list";
 import Avatar from "../avatar";
 
-interface BioProps {
+export interface BioProps {
   textAlign: 'left' | 'center' | 'right' | 'justify';
   avatarStyle?: CSSProperties;
   showName?: boolean;

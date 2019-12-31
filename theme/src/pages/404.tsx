@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Theme from "../styles/theme";
 import SEO from "../components/seo";
 
-interface ErrorProps {
+export interface ErrorProps {
   location: Location;
 }
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {graphql, useStaticQuery} from "gatsby";
 import Img from "gatsby-image";
 
-interface AvatarProps {
+export interface AvatarProps {
   alt: string;
   style?: CSSProperties;
 }

@@ -8,7 +8,7 @@ import styled from "styled-components";
 import PageSidebarContent from "../components/page-sidebar-content";
 import SEO from "../components/seo";
 
-interface PageTemplateProps {
+export interface PageTemplateProps {
   pathContext: {
     page: Page;
   };

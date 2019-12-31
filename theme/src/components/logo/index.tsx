@@ -4,7 +4,7 @@ import {graphql, Link, useStaticQuery} from "gatsby";
 import Theme from "../../styles/theme";
 import Img from "gatsby-image";
 
-interface LogoProps {
+export interface LogoProps {
   title: string;
 }
 

@@ -2,7 +2,7 @@ import React, {FunctionComponent} from "react";
 import {MenuItem} from "../../utils/models";
 import {Copyright, DesignBy, FooterContainer, FooterMenuItem, FooterMenuLink, StyledFooter, StyledNav} from "./style";
 
-interface FooterProps {
+export interface FooterProps {
   menu: MenuItem[];
   owner: string;
 }

@@ -14,7 +14,7 @@ import Comments from "../components/comments";
 import SEO from "../components/seo";
 import {FaAlignJustify, FaTimes} from "react-icons/fa";
 
-interface PostTemplateProps {
+export interface PostTemplateProps {
   data: {
     primaryTag: Tag | null;
     post: Post;

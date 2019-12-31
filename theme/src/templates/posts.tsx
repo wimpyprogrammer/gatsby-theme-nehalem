@@ -10,7 +10,7 @@ import SidebarContent from "../components/sidebar-content";
 import SEO from "../components/seo";
 import Theme from "../styles/theme";
 
-interface PostsPageProps {
+export interface PostsPageProps {
   pathContext: {
     posts: Post[];
     postsPerPage: number;

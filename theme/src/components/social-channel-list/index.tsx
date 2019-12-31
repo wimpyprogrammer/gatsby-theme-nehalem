@@ -12,7 +12,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-interface SocialChannelListProps {
+export interface SocialChannelListProps {
   channels: SocialChannels;
 }
 

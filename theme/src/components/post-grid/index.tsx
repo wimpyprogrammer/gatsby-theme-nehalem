@@ -3,7 +3,7 @@ import {Post} from "../../utils/models";
 import {Grid} from "../common";
 import {Card} from "../card";
 
-interface PostGridProps {
+export interface PostGridProps {
   posts: Post[];
 }
 

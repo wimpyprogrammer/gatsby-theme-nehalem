@@ -6,7 +6,7 @@ import Subheader from "../components/subheader";
 import SEO from "../components/seo";
 import PostGrid from "../components/post-grid";
 
-interface ArchivePageProps {
+export interface ArchivePageProps {
   data: {
     allPosts: {
       edges: Array<{ node: Post }>;

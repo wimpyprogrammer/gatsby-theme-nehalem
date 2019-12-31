@@ -10,7 +10,7 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import SEO from "../components/seo";
 
-interface TagsPageProps {
+export interface TagsPageProps {
   data: {
     allTags: {
       edges: Array<{ node: Tag }>;
