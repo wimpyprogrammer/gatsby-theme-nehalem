@@ -7,8 +7,8 @@ import {Card} from "../components/card";
 import slugify from "slugify";
 import {Grid} from "../components/common";
 import Img from "gatsby-image";
-import styled from "styled-components";
 import SEO from "../components/seo";
+import {TagName,TagSvgIcon} from "../styles/tags";
 
 export interface TagsPageProps {
   data: {
@@ -18,14 +18,6 @@ export interface TagsPageProps {
   };
   location: Location;
 }
-
-const TagSvgIcon = styled.img`
-  max-height: 55px;
-`;
-
-const TagName = styled.p`
-  margin: 0 !important;
-`;
 
 const TagsPage: FunctionComponent<TagsPageProps> = ({data, location}) => {
   const tags = data.allTags.edges.map(node => node.node);

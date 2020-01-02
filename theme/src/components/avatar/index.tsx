@@ -1,17 +1,11 @@
 import React, {CSSProperties, FunctionComponent} from "react";
-import styled from "styled-components";
 import {graphql, useStaticQuery} from "gatsby";
-import Img from "gatsby-image";
+import {StyledAvatar} from "./style";
 
 export interface AvatarProps {
   alt: string;
   style?: CSSProperties;
 }
-
-const StyledAvatar = styled(Img)<AvatarProps>`
-  max-width: 55px;
-  border-radius: 100%;
-`;
 
 /**
  * Placeholder component which shows your avatar.

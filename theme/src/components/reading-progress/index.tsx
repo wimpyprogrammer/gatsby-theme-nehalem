@@ -1,19 +1,10 @@
 import React, {FunctionComponent, RefObject, useEffect, useState} from "react";
-import styled from "styled-components";
-import Theme from "../../styles/theme";
+import {ReadingProgressBar} from "./style";
 
 export interface ReadingProgressProps {
   target: RefObject<HTMLElement>;
   color?: string;
 }
-
-const ReadingProgressBar = styled.div<{ color?: string; }>`
-  position: sticky;
-  height: 5px;
-  top: 70px;
-  background-color: ${props => props.color ? props.color : Theme.layout.primaryColor};
-  z-index: 500;
-`;
 
 const ReadingProgress: FunctionComponent<ReadingProgressProps> = ({color, target}) => {
   const [readingProgress, setReadingProgress] = useState<number>(0);
