@@ -4,7 +4,7 @@ import {graphql, useStaticQuery} from "gatsby";
 import {SiteMetadata} from "../../utils/models";
 import url from "url";
 
-interface SEOProps {
+export interface SEOProps {
   title?: string;
   lang?: string;
   description?: string;

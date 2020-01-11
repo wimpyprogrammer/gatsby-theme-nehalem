@@ -4,7 +4,7 @@ import {MenuItem} from "../../utils/models";
 import {Search} from "../search";
 import Logo from "../logo";
 
-interface NavigationProps {
+export interface NavigationProps {
   title: string;
   menu: MenuItem[];
   showSearch: boolean;

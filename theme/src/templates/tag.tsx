@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 import Theme from "../styles/theme";
 import PostGrid from "../components/post-grid";
 
-interface TagTemplateProps {
+export interface TagTemplateProps {
   data: {
     tag: Tag;
     posts: {

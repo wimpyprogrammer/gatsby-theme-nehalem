@@ -1,6 +1,5 @@
 import React, {FunctionComponent} from "react";
 import {SocialChannels} from "../../utils/models";
-import styled from "styled-components";
 import {
   FaFacebook,
   FaGithub,
@@ -11,8 +10,9 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import {StyledSocialChannel,StyledSocialChannels} from "./style";
 
-interface SocialChannelListProps {
+export interface SocialChannelListProps {
   channels: SocialChannels;
 }
 
@@ -37,24 +37,6 @@ const createSocialIcon = (channel: keyof SocialChannels) => {
 
   return <FaQuestionCircle/>;
 };
-
-const StyledSocialChannels = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-`;
-
-const StyledSocialChannel = styled.li`
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 1.6em;
-  opacity: .7;
-  transition: opacity .5s;
-
-  &:hover {
-    opacity: 1;
-  }
-`;
 
 const SocialChannelList: FunctionComponent<SocialChannelListProps> = ({channels}) => (
   <StyledSocialChannels>

@@ -4,7 +4,7 @@ import {ResultLink, ResultsTitle, ResultTitle, SearchBox, SearchInput, SearchRes
 import {NavMenuItem, ToggleSearchButton} from "../navigation/style";
 import {navigate} from 'gatsby';
 
-interface SearchResult {
+export interface SearchResult {
   title: string;
   content: string;
   tags: string[];

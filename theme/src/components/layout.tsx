@@ -6,7 +6,7 @@ import {SiteMetadata} from "../utils/models";
 import Navigation from "./navigation";
 import Footer from "./footer";
 
-interface LayoutProps {
+export interface LayoutProps {
   children: ReactNode;
   bigHeader?: boolean;
 }

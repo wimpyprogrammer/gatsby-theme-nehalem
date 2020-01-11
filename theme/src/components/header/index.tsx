@@ -4,7 +4,7 @@ import {Description, StyledHeader, StyledTopics, Title, TitleWrapper} from "./st
 import reactStringReplace from 'react-string-replace';
 import {MenuItem} from "../../utils/models";
 
-interface HeaderProps {
+export interface HeaderProps {
   title: string;
   description: string;
   topics: string[];
