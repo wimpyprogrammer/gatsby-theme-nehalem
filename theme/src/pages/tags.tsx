@@ -30,7 +30,7 @@ const TagsPage: FunctionComponent<TagsPageProps> = ({data, location}) => {
         type={`Series`}
       />
       <Subheader title={`Tags`} subtitle={`${tags.length} tags`}/>
-      <Grid columns={6}>
+      <Grid columns={{ xl: 6, lg: 5, md: 3 }}>
         {tags.map((tag, index) => (
           <Card
             key={index}

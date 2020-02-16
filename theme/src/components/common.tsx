@@ -12,13 +12,29 @@ export const Container = styled.div`
   }
 `;
 
-export const Grid = styled(Container)<{ columns?: number }>`
+export interface GridProps {
+  columns?: {[size in keyof typeof Theme.breakpoints]?: number}
+}
+
+export const Grid = styled(Container)<GridProps>`
   display: grid;
-  grid-template-columns: repeat(${props => props.columns ? props.columns : 3}, 1fr);
+  grid-template-columns: repeat(${({columns}) => (columns && columns.xl) || 3}, 1fr);
   grid-gap: 30px;
 
+  @media (max-width: ${Theme.breakpoints.lg}) {
+    grid-template-columns: repeat(${({columns}) => (columns && columns.lg) || 3}, 1fr);
+  }
+
+  @media (max-width: ${Theme.breakpoints.md}) {
+    grid-template-columns: repeat(${({columns}) => (columns && columns.md) || 3}, 1fr);
+  }
+
   @media (max-width: ${Theme.breakpoints.sm}) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(${({columns}) => (columns && columns.sm) || 1}, 1fr);
     padding: 0 20px;
+  }
+
+  @media (max-width: ${Theme.breakpoints.xs}) {
+    grid-template-columns: repeat(${({columns}) => (columns && columns.xs) || 1}, 1fr);
   }
 `;
