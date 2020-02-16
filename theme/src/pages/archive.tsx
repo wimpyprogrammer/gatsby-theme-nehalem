@@ -52,11 +52,7 @@ export const query = graphql`
               featuredImage {
                 childImageSharp {
                   sizes(maxWidth: 500, quality: 70) {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    sizes
+                    ...GatsbyImageSharpSizes_withWebp
                   }
                 }
               }

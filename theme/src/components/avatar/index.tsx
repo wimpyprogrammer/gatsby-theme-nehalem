@@ -16,7 +16,7 @@ const Avatar: FunctionComponent<AvatarProps> = ({alt, style}) => {
       file(sourceInstanceName: {eq: "themeAssets"}, name: {eq: "nehalist-gatsby"}) {
         childImageSharp {
           fixed(width: 55, height: 55) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }

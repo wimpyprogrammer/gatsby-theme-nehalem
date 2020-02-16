@@ -61,6 +61,8 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
                     aspectRatio
                     src
                     srcSet
+                    srcWebp
+                    srcSetWebp
                     sizes
                   }
                 }

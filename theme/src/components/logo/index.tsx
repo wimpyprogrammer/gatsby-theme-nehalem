@@ -12,7 +12,7 @@ const Logo: FunctionComponent<LogoProps> = ({title}) => {
       file(sourceInstanceName: {eq: "themeAssets"}, name: {eq: "nehalist-gatsby"}) {
         childImageSharp {
           fixed(width: 30, height: 30) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
