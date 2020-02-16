@@ -64,7 +64,7 @@ export const query = graphql`
           icon {
             childImageSharp {
               fixed(height: 55) {
-                ...GatsbyImageSharpFixed
+                ...GatsbyImageSharpFixed_withWebp
               }
             }
             extension

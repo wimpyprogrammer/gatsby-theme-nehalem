@@ -23,7 +23,7 @@ const TagList: FunctionComponent = () => {
           icon {
             childImageSharp {
               fixed(height: 55) {
-                ...GatsbyImageSharpFixed
+                ...GatsbyImageSharpFixed_withWebp
               }
             }
             extension
