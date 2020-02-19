@@ -137,36 +137,36 @@ const SEO: FunctionComponent<SEOProps> = ({
         )
       }
     >
-      <script type={`application/ld+json`}>{`
-        {
+      <script type="application/ld+json">
+        {JSON.stringify({
           "@context": "https://schema.org/",
-          "@type": "${type}",
-          "author": {
+          "@type": type,
+          author: {
             "@type": "Person",
-            "name": "${metadata.author.name}"
+            name: metadata.author.name,
           },
-          ${tags.length > 0 ? `"keywords": "${tags.join(`, `)}",` : ``}
-          "headline": "${siteTitle}",
-          "url": "${canonical}",
-          ${publishedAt ? `"datePublished": "${publishedAt}",` : ``}
-          ${updatedAt ? `"dateModified": "${updatedAt}",` : ``}
-          ${metaImage ? `"image": {
+          keywords: tags.length > 0 ? tags.join(`, `) : undefined,
+          headline: siteTitle,
+          url: canonical,
+          datePublished: publishedAt || undefined,
+          dateModified: updatedAt || undefined,
+          image: metaImage ? {
             "@type": "ImageObject",
-            "url": "${metaImage}",
-            "width": "1000",
-            "height": "520"
-          },` : ``}
-          "publisher": {
+            url: metaImage,
+            width: 1000,
+            height: 520,
+          } : undefined,
+          publisher: {
             "@type": "Organization",
-            "name": "${metadata.title}"
+            name: metadata.title,
           },
-          "description": "${metaDescription}",
-          "mainEntityOfPage": {
+          description: metaDescription,
+          mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": "${metadata.siteUrl}"
-          }
-        }
-      `}</script>
+            "@id": metadata.siteUrl,
+          },
+        })}
+      </script>
     </Helmet>
   );
 };
