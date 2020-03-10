@@ -21,6 +21,9 @@ export interface DefaultTheme {
     header: {
       height: string;
       background: string;
-    };
+    }
+    post: {
+      width: string;
+    }
   };
 }
