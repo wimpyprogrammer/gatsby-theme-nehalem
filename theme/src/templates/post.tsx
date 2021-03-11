@@ -4,6 +4,7 @@ import {Post, Tag} from "../utils/models";
 import Toc from "../components/toc";
 import ReadingProgress from "../components/reading-progress";
 import {graphql, Link} from "gatsby";
+import {getSrc} from "gatsby-plugin-image";
 import slugify from "slugify";
 import Bio from "../components/bio";
 import Comments from "../components/comments";
@@ -51,7 +52,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({data, location}) =>
         updatedAt={post.frontmatter.updated}
         tags={post.frontmatter.tags}
         description={post.frontmatter.excerpt}
-        image={post.frontmatter.featuredImage ? post.frontmatter.featuredImage.childImageSharp.sizes.src : null}
+        image={post.frontmatter.featuredImage ? getSrc(post.frontmatter.featuredImage) : null}
       />
       <ReadingProgress target={readingProgressRef} color={primaryTag ? primaryTag.color : undefined}/>
       <PostContainer>
@@ -83,7 +84,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({data, location}) =>
               <PostTitle>{post.frontmatter.title}</PostTitle>
             </PostHeader>
             {post.frontmatter.featuredImage &&
-            <FeaturedImage sizes={post.frontmatter.featuredImage.childImageSharp.sizes}/>
+              <FeaturedImage image={post.frontmatter.featuredImage.childImageSharp.gatsbyImageData} alt=""/>
             }
             <StyledPost dangerouslySetInnerHTML={{__html: post.html}} className={`post`}/>
             <PostFooter>
@@ -141,9 +142,7 @@ export const query = graphql`
         updatedPretty: updated(formatString: "DD MMMM, YYYY")
         featuredImage {
           childImageSharp {
-            sizes(maxWidth: 800, quality: 75) {
-              ...GatsbyImageSharpSizes_withWebp
-            }
+            gatsbyImageData(width: 800, quality: 75, formats: [AUTO, WEBP, AVIF])
           }
         }
       }

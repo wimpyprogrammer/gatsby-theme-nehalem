@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Link} from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Theme from "../styles/theme";
 import {Container} from "../components/common";
 
@@ -112,7 +112,7 @@ export const PostHeader = styled.header`
   }
 `;
 
-export const FeaturedImage = styled(Img)`
+export const FeaturedImage = styled(GatsbyImage)`
   border-radius: 0;
 
   @media (max-width: ${Theme.breakpoints.xl}) {

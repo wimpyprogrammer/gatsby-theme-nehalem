@@ -8,14 +8,14 @@ import SEO from "../components/seo";
 import {PageContainer,PageSidebar} from "../styles/page";
 
 export interface PageTemplateProps {
-  pathContext: {
+  pageContext: {
     page: Page;
   };
   location: Location;
 }
 
-const PageTemplate: FunctionComponent<PageTemplateProps> = ({pathContext, location}) => {
-  const page = pathContext.page;
+const PageTemplate: FunctionComponent<PageTemplateProps> = ({ pageContext, location }) => {
+  const page = pageContext.page;
 
   return (
     <Layout bigHeader={false}>

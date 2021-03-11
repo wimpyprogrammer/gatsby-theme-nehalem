@@ -30,12 +30,8 @@ export const Card: FunctionComponent<CardProps> = ({
                                                    }) => (
   <StyledArticle style={style}>
     <StyledCard to={path}>
-      {/* TODO: Oh boy... */}
-      {(featuredImage && featuredImage.fixed) &&
-      <FeaturedImage fixed={featuredImage.fixed} halfImage={halfImage} alt={`Image for "${title}"`} />
-      }
-      {(featuredImage && featuredImage.sizes) &&
-      <FeaturedImage sizes={featuredImage.sizes} halfImage={halfImage} alt={`Image for "${title}"`} />
+      {featuredImage &&
+        <FeaturedImage image={featuredImage.childImageSharp.gatsbyImageData} halfImage={halfImage} alt={`Image for "${title}"`} />
       }
       <CardContent compact={compact}>
         {children}

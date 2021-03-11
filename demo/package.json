@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@nehalist/gatsby-theme-nehalem": "*",
-    "gatsby": "^3.0.3",
-    "react": "^16.8.6",
+    "gatsby": "^3.0.4",
+    "react": "^17.0.1",
     "react-carbon": "^1.0.7",
-    "react-dom": "^16.8.6"
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

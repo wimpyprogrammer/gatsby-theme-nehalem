@@ -6,7 +6,7 @@ import {Tag} from "../utils/models";
 import {Card} from "../components/card";
 import slugify from "slugify";
 import {Grid} from "../components/common";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import SEO from "../components/seo";
 import {TagName,TagSvgIcon} from "../styles/tags";
 
@@ -38,9 +38,9 @@ const TagsPage: FunctionComponent<TagsPageProps> = ({data, location}) => {
             compact={true}
             style={{textAlign: 'center'}}
           >
-            {/* gatsby-image doesn't handle SVGs, hence we need to take care of it */}
+            {/* sharp doesn't handle SVGs, hence we need to take care of it */}
             {tag.icon.extension !== 'svg'
-              ? <Img fixed={tag.icon.childImageSharp.fixed}/>
+              ? <GatsbyImage image={tag.icon.childImageSharp.gatsbyImageData} alt={tag.name}/>
               : <TagSvgIcon src={tag.icon.publicURL} alt={tag.name}/>
             }
             <TagName>
@@ -56,16 +56,14 @@ const TagsPage: FunctionComponent<TagsPageProps> = ({data, location}) => {
 export default TagsPage;
 
 export const query = graphql`
-  query {
+  {
     allTags {
       edges {
         node {
           name
           icon {
             childImageSharp {
-              fixed(height: 55) {
-                ...GatsbyImageSharpFixed_withWebp
-              }
+              gatsbyImageData(height: 55, layout: FIXED, formats: [AUTO, WEBP, AVIF])
             }
             extension
             publicURL
