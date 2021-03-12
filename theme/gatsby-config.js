@@ -62,6 +62,7 @@ module.exports = (themeOptions) => {
     },
     plugins: [
       `gatsby-plugin-typescript`,
+      `gatsby-plugin-image`,
       `gatsby-transformer-sharp`,
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-styled-components`,

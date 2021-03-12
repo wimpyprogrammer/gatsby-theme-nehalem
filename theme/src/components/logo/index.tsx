@@ -8,12 +8,10 @@ export interface LogoProps {
 
 const Logo: FunctionComponent<LogoProps> = ({title}) => {
   const logo = useStaticQuery(graphql`
-    query {
+    {
       file(sourceInstanceName: {eq: "themeAssets"}, name: {eq: "nehalist-gatsby"}) {
         childImageSharp {
-          fixed(width: 30, height: 30) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
+          gatsbyImageData(width: 30, height: 30, layout: FIXED, formats: [AUTO, WEBP, AVIF])
         }
       }
     }
@@ -21,7 +19,7 @@ const Logo: FunctionComponent<LogoProps> = ({title}) => {
 
   return (
     <HomeLink to={`/`}>
-      <LogoImage fixed={logo.file.childImageSharp.fixed} alt={title}/>
+      <LogoImage image={logo.file.childImageSharp.gatsbyImageData} alt={title}/>
     </HomeLink>
   );
 }

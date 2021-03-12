@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const result = await graphql(`
     query {
       pages: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(\\/pages\\/).*.(md)/" } }
+        filter: { fileAbsolutePath: { regex: "/(\\/pages\\\\/).*.(md)/" } }
       ) {
         edges {
           node {
@@ -56,15 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
               updatedPretty: created(formatString: "DD MMMM, YYYY")
               featuredImage {
                 childImageSharp {
-                  sizes(maxWidth: 500, quality: 70) {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
+                  gatsbyImageData(width: 500, quality: 70, formats: [AUTO, WEBP, AVIF])
                 }
               }
             }

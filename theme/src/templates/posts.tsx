@@ -8,15 +8,15 @@ import SEO from "../components/seo";
 import {ArchiveLink,ArchiveLinkWrapper,HomeContainer,PostsContainer,Sidebar} from "../styles/posts";
 
 export interface PostsPageProps {
-  pathContext: {
+  pageContext: {
     posts: Post[];
     postsPerPage: number;
   };
   location: Location;
 }
 
-const PostsPage: FunctionComponent<PostsPageProps> = ({ pathContext, location }) => {
-  const posts = pathContext.posts.slice(0, pathContext.postsPerPage);
+const PostsPage: FunctionComponent<PostsPageProps> = ({ pageContext, location }) => {
+  const posts = pageContext.posts.slice(0, pageContext.postsPerPage);
 
   return (
     <Layout>
@@ -27,7 +27,7 @@ const PostsPage: FunctionComponent<PostsPageProps> = ({ pathContext, location })
             <Card
               title={post.frontmatter.title}
               path={post.frontmatter.path}
-              featuredImage={post.frontmatter.featuredImage ? post.frontmatter.featuredImage.childImageSharp : null}
+              featuredImage={post.frontmatter.featuredImage}
               content={post.frontmatter.excerpt}
               key={index}
               meta={

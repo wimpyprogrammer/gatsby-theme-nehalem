@@ -12,18 +12,16 @@ export interface AvatarProps {
  */
 const Avatar: FunctionComponent<AvatarProps> = ({alt, style}) => {
   const logo = useStaticQuery(graphql`
-    query {
+    {
       file(sourceInstanceName: {eq: "themeAssets"}, name: {eq: "nehalist-gatsby"}) {
         childImageSharp {
-          fixed(width: 55, height: 55) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
+          gatsbyImageData(width: 55, height: 55, layout: FIXED, formats: [AUTO, WEBP, AVIF])
         }
       }
     }
   `);
 
-  return <StyledAvatar fixed={logo.file.childImageSharp.fixed} alt={alt} style={style} />;
+  return <StyledAvatar image={logo.file.childImageSharp.gatsbyImageData} alt={alt} style={style} />;
 };
 
 export default Avatar;

@@ -48,7 +48,7 @@ export const StyledNav = styled.nav`
 
   li {
     display: inline-block;
-    margin-right: 25px;
+    margin-right: 40px;
 
     &:last-child {
       margin-right: 0;

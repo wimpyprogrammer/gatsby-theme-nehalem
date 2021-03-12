@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Link} from "gatsby";
 import Theme from "../../styles/theme";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import {CardProps} from "./index";
 
 export const StyledCard = styled(Link)`
@@ -29,7 +29,7 @@ export const StyledArticle = styled.article`
   }
 `;
 
-export const FeaturedImage = styled(Img)<Pick<CardProps, 'halfImage'>>`
+export const FeaturedImage = styled(GatsbyImage)<Pick<CardProps, 'halfImage'>>`
   background-position: center;
   background-size: cover;
   max-width: 100%;
