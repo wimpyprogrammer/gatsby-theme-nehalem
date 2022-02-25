@@ -67,7 +67,14 @@ module.exports = (themeOptions) => {
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-styled-components`,
       `gatsby-plugin-sitemap`,
-      `gatsby-plugin-sharp`,
+      {
+        resolve: `gatsby-plugin-sharp`,
+        options: {
+          defaults: {
+            formats: [`auto`, `webp`, `avif`]
+          }
+        }
+      },
       {
         resolve: `gatsby-plugin-manifest`,
         options: manifest
