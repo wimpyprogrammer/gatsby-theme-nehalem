@@ -1,3 +1,9 @@
+const { CONTEXT, FORCE_FULL_BUILD, NETLIFY } = process.env;
+
+const isDeployPreview = NETLIFY === 'true' && CONTEXT !== 'production';
+const isFastBuild = isDeployPreview && FORCE_FULL_BUILD !== 'true';
+console.log(`Fast build: ${!!isFastBuild}`);
+
 module.exports = (themeOptions) => {
   const loadDefaultPages = themeOptions.loadDefaultPages !== undefined ? themeOptions.loadDefaultPages : true;
   const contentPath      = themeOptions.contentPath || 'content';
@@ -66,16 +72,18 @@ module.exports = (themeOptions) => {
       `gatsby-transformer-sharp`,
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-styled-components`,
-      `gatsby-plugin-sitemap`,
+      !isFastBuild && `gatsby-plugin-sitemap`,
       {
         resolve: `gatsby-plugin-sharp`,
         options: {
           defaults: {
-            formats: [`auto`, `webp`, `avif`]
+            formats: isFastBuild
+              ? [`auto`]
+              : [`auto`, `webp`, `avif`]
           }
         }
       },
-      {
+      !isFastBuild && {
         resolve: `gatsby-plugin-manifest`,
         options: manifest
       },
@@ -135,8 +143,8 @@ module.exports = (themeOptions) => {
               resolve: `gatsby-remark-images`,
               options: {
                 maxWidth: 1035,
-                withAvif: true,
-                withWebp: true
+                withAvif: !isFastBuild,
+                withWebp: !isFastBuild,
               }
             }
           ]
@@ -148,7 +156,7 @@ module.exports = (themeOptions) => {
           path: `${__dirname}/src/pages`
         }
       },
-      {
+      !isFastBuild && {
         resolve: `gatsby-plugin-feed`,
         options: {
           query: `
