@@ -46,7 +46,7 @@ module.exports = (themeOptions) => {
         },
         {
           name: 'Sitemap',
-          path: '/sitemap.xml'
+          path: '/sitemap/sitemap-index.xml'
         }
       ],
       search: true,
