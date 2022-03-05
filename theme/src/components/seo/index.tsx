@@ -53,7 +53,7 @@ const SEO: FunctionComponent<SEOProps> = ({
   const siteTitle       = title ? `${title} - ${metadata.title}` : metadata.title;
   const metaDescription = description
     ? description
-    : metadata.description.replace("%TOPICS%", metadata.topics.join(", "));
+    : metadata.description;
   const metaImage       = image ? `${metadata.siteUrl}${image}` : null;
   const canonical       = url.resolve(metadata.siteUrl, location.pathname);
 

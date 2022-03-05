@@ -21,7 +21,7 @@ module.exports = (themeOptions) => {
     siteMetadata: {
       title: `nehalem`,
       siteUrl: `https://nehalem.netlify.com`,
-      description: `A Gatsby theme for %TOPICS%`,
+      description: `A Gatsby theme`,
       topics: [
         `bloggers`,
         `geeks`,

@@ -66,8 +66,7 @@ siteMetadata: {
   // Your site url
   siteUrl: `https://nehalem.netlify.com`,
   // Your site description
-  description: `A Gatsby theme for %TOPICS%`,
-  // These topics will be inserted at %TOPICS% in the description and used for the Typed component
+  description: `A Gatsby theme`,
   topics: [
     `bloggers`,
     `geeks`,
