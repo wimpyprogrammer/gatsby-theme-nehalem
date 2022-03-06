@@ -56,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
               updatedPretty: created(formatString: "DD MMMM, YYYY")
               featuredImage {
                 childImageSharp {
-                  gatsbyImageData(width: 500, quality: 70, formats: [AUTO, WEBP, AVIF])
+                  gatsbyImageData(width: 500)
                 }
               }
             }

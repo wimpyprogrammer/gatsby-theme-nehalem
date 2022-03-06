@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Theme from "../../styles/theme";
-import Typed from 'react-typed';
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -39,8 +38,4 @@ export const Title = styled.h1`
 export const Description = styled.h2`
   margin: 0;
   opacity: .85;
-`;
-
-export const StyledTopics = styled(Typed)`
-  border-bottom: 3px #000 solid;
 `;

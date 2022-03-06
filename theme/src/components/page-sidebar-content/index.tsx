@@ -23,7 +23,7 @@ const PageSidebarContent: FunctionComponent = () => {
               excerpt
               featuredImage {
                 childImageSharp {
-                  gatsbyImageData(width: 315, height: 100, layout: FIXED, formats: [AUTO, WEBP, AVIF])
+                  gatsbyImageData(width: 315, height: 100, layout: FIXED)
                 }
               }
             }

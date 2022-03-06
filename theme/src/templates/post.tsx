@@ -142,7 +142,7 @@ export const query = graphql`
         updatedPretty: updated(formatString: "DD MMMM, YYYY")
         featuredImage {
           childImageSharp {
-            gatsbyImageData(width: 800, quality: 75, formats: [AUTO, WEBP, AVIF])
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

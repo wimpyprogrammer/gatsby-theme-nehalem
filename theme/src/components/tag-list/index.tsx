@@ -22,7 +22,7 @@ const TagList: FunctionComponent = () => {
           name
           icon {
             childImageSharp {
-              gatsbyImageData(height: 55, layout: FIXED, formats: [AUTO, WEBP, AVIF])
+              gatsbyImageData(height: 55, layout: FIXED)
             }
             extension
             publicURL

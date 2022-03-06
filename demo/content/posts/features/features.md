@@ -68,7 +68,7 @@ Posts are automatically attached by a table of contents (like the one you can se
 All pages, posts and archives are SEO optimized - this includes proper open graph meta tags for Facebook, Twitter card 
 tags and even JSON-LD.
 
-Additionally the theme ships with a sitemap (`<domain>/sitemap.xml`) and a RSS feed (`<domain>/rss.xml`).
+Additionally the theme ships with a sitemap (`<domain>/sitemap/sitemap-index.xml`) and a RSS feed (`<domain>/rss.xml`).
 
 ## Syntax highlighting
 
