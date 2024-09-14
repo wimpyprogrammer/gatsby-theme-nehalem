@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import {Container} from "../common";
+import Theme from "../../styles/theme";
 import {Link} from "gatsby";
 
 export const StyledFooter = styled.footer`
@@ -44,14 +45,23 @@ export const StyledNav = styled.nav`
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    @media (max-width: ${Theme.breakpoints.sm}) {
+      text-align: left;
+    }
   }
 
   li {
     display: inline-block;
-    margin-right: 40px;
+    margin-right: 30px;
+    padding: 10px;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    @media (max-width: ${Theme.breakpoints.sm}) {
+      display: block;
     }
   }
 `;
